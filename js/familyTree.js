@@ -22,6 +22,17 @@ meghan.constructor=familyMember;
 let dave = new person("Dave","male","Father");
 dave.constructor=familyMember;
 
+let findFather=function(){
+    let fathers=[];
+    let regEx=/Father/;
+    for(i=0;i<familyCount;i++){
+        if(regEx.test(familyCount[i])){
+            fathers.push(familyCount[i].name);
+        }
+    }
+        document.getElementById("dadCount").innerHTML=fathers;
+}
+
 let findMothers=function(){
     let mothers=[];
     let regEx=/Mother/;

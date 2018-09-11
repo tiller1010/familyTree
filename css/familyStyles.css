@@ -1,17 +1,22 @@
 .personBox{
-	width: 200px;
-	height: 200px;
-	background-color: gray;
+	width: 120px;
+	height: 120px;
+	border-style:solid;
+	border-radius:25px;
+	background-color: #aaa2b1;
 	background-position:center;
-	background-size:150px,150px;
+	background-size:100px;
 	background-repeat:no-repeat;
 }
 
 #momContainer{
+	background-color:aliceblue;
 	position: absolute;
-	left: 30%;
+	right: 10%;
 	top:5%;
-	border:solid black;
+	border:solid;
+	border-color:#aaa2b1;
+	border-radius:25px;
 	width:150px;
 	height:100px;
 }
@@ -20,13 +25,20 @@
 	position: absolute;
 	width:100px;
 	left: 30%;
-	top:5%
+	top:5%;
+	border-radius:25px;
 }
 
 #momCount{
+	font-family:arial;
 	position: absolute;
 	left:30%;
 	top:55%;
+}
+
+#generation3{
+	display:grid;
+	grid-template-columns:.5fr .5fr 1fr;
 }
 
 #suzy{
