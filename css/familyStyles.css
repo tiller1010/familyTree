@@ -1,20 +1,42 @@
 .personBox{
-	position: absolute;
-	width: 100px;
-	height: 100px;
+	width: 200px;
+	height: 200px;
 	background-color: gray;
+	background-position:center;
+	background-size:150px,150px;
+	background-repeat:no-repeat;
+}
+
+#momContainer{
+	position: absolute;
+	left: 30%;
+	top:5%;
+	border:solid black;
+	width:150px;
+	height:100px;
 }
 
 #momBtn{
 	position: absolute;
-	left: 10%;
+	width:100px;
+	left: 30%;
+	top:5%
 }
 
 #momCount{
 	position: absolute;
-	left:10%;
-	top:10%;
-	border:solid black;
-	width:text-content;
-	height:20px;
+	left:30%;
+	top:55%;
+}
+
+#suzy{
+	background-image:url(https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg-1024x683.jpg);
+}
+
+#meghan{
+	background-image:url(https://www.abilitynet.org.uk/sites/abilitynet.org.uk/files/admin/Rhianna_Kinchin.jpg);
+}
+
+#dave{
+	background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNEp35r5gO-TT20q4tFKhpyHdmiOT20r5cdoB8jhbcfo2QMLAwGg);
 }

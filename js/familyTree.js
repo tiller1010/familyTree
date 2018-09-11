@@ -13,14 +13,14 @@ person.prototype.sayName=function(){
 function familyMember(){}
 familyMember.prototype=Object.create(person.prototype);
 
-let auntie = new person("Suzy","female","Mother");
-auntie.constructor=familyMember;
+let suzy = new person("Suzy","female","Mother");
+suzy.constructor=familyMember;
 
 let meghan = new person("Meghan","female","Mother");
 meghan.constructor=familyMember;
 
-let uncle = new person("Dave","male","Father");
-uncle.constructor=familyMember;
+let dave = new person("Dave","male","Father");
+dave.constructor=familyMember;
 
 let findMothers=function(){
     let mothers=[];
