@@ -1,0 +1,20 @@
+.personBox{
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	background-color: gray;
+}
+
+#momBtn{
+	position: absolute;
+	left: 10%;
+}
+
+#momCount{
+	position: absolute;
+	left:10%;
+	top:10%;
+	border:solid black;
+	width:text-content;
+	height:20px;
+}
