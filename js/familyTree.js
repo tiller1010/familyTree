@@ -22,16 +22,16 @@ meghan.constructor=familyMember;
 let dave = new person("Dave","male","Father");
 dave.constructor=familyMember;
 
-let findFather=function(){
+let findFathers=function(){
     let fathers=[];
     let regEx=/Father/;
-    for(i=0;i<familyCount;i++){
-        if(regEx.test(familyCount[i])){
+    for(i=0;i<familyCount.length;i++){
+        if(regEx.test(familyCount[i].relation)){
             fathers.push(familyCount[i].name);
         }
     }
         document.getElementById("dadCount").innerHTML=fathers;
-}
+};
 
 let findMothers=function(){
     let mothers=[];
@@ -48,4 +48,6 @@ let findMothers=function(){
 window.onload=function(){
 	let momButton = document.getElementById("momBtn");
 	momButton.addEventListener("click",findMothers,false);
+    let dadButton = document.getElementById("dadBtn");
+    dadButton.addEventListener("click",findFathers,false);
 }

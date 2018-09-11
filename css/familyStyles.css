@@ -9,11 +9,11 @@
 	background-repeat:no-repeat;
 }
 
-#momContainer{
-	background-color:aliceblue;
-	position: absolute;
-	right: 10%;
-	top:5%;
+.buttonWindow{
+	position: relative;
+	top:-110px;
+ 	right: -70%;
+ 	background-color:aliceblue;
 	border:solid;
 	border-color:#aaa2b1;
 	border-radius:25px;
@@ -21,15 +21,13 @@
 	height:100px;
 }
 
-#momBtn{
-	position: absolute;
-	width:100px;
-	left: 30%;
-	top:5%;
+.btn{
+	margin-left:10%;
+	margin-top:10%;
 	border-radius:25px;
 }
 
-#momCount{
+.count{
 	font-family:arial;
 	position: absolute;
 	left:30%;
