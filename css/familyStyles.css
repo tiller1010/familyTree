@@ -40,8 +40,13 @@
 	top:55%;
 }
 
+#createPerson{
+	width: 200px;
+	border:solid;
+}
+
 .typeBox{
-	margin: 5px;
+	margin: 10px;
 }
 
 #generation3{

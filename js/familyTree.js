@@ -50,4 +50,8 @@ window.onload=function(){
 	momButton.addEventListener("click",findMothers,false);
     let dadButton = document.getElementById("dadBtn");
     dadButton.addEventListener("click",findFathers,false);
+    let createButton = document.getElementById("create");
+    createButton.addEventListener("click",function(){
+        new person(document.getElementById("nameBox").value,"male",document.getElementById("relationBox").value);
+    },false); 
 }
