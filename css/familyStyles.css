@@ -42,7 +42,14 @@
 
 #createPerson{
 	width: 200px;
+	padding: 10px;
 	border:solid;
+	border-radius:25px;
+	font-family:arial;
+	background-color:aliceblue;
+}
+#createPerson:hover{
+	background-color:#346fa24d;
 }
 
 .typeBox{

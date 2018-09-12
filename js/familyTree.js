@@ -24,7 +24,7 @@ dave.constructor=familyMember;
 
 let findFathers=function(){
     let fathers=[];
-    let regEx=/Father/;
+    let regEx=/Father/i;
     for(i=0;i<familyCount.length;i++){
         if(regEx.test(familyCount[i].relation)){
             fathers.push(familyCount[i].name);
@@ -35,7 +35,7 @@ let findFathers=function(){
 
 let findMothers=function(){
     let mothers=[];
-    let regEx=/Mother/;
+    let regEx=/Mother/i;
     for(i=0;i<familyCount.length;i++){
         if(regEx.test(familyCount[i].relation)){
             mothers.push(familyCount[i].name);
@@ -52,6 +52,6 @@ window.onload=function(){
     dadButton.addEventListener("click",findFathers,false);
     let createButton = document.getElementById("create");
     createButton.addEventListener("click",function(){
-        new person(document.getElementById("nameBox").value,"male",document.getElementById("relationBox").value);
-    },false); 
+        new person(document.getElementById("nameBox").value,document.getElementById("genderBox").value,document.getElementById("relationBox").value);
+    },false);
 }
