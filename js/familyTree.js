@@ -53,5 +53,8 @@ window.onload=function(){
     let createButton = document.getElementById("create");
     createButton.addEventListener("click",function(){
         new person(document.getElementById("nameBox").value,document.getElementById("genderBox").value,document.getElementById("relationBox").value);
+        document.getElementById("nameBox").value='';
+        document.getElementById("genderBox").value='';
+        document.getElementById("relationBox").value='';
     },false);
 }
