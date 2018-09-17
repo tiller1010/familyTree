@@ -56,5 +56,6 @@ window.onload=function(){
         document.getElementById("nameBox").value='';
         document.getElementById("genderBox").value='';
         document.getElementById("relationBox").value='';
+        $("#generation3").append("<div class='personBox'</div>");
     },false);
 }
