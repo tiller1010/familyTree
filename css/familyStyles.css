@@ -36,6 +36,11 @@ h1{
 }
 .personBox:hover{
 	background-color:#44c3c3;
+	cursor: pointer;
+}
+
+.description{
+	/*display: none;*/
 }
 
 .buttonWindow{
@@ -51,6 +56,7 @@ h1{
 }
 .buttonWindow:hover{
 	background-color:#346fa24d;
+	cursor: pointer;
 }
 
 .btn{

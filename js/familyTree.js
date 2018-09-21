@@ -46,10 +46,16 @@ let findMothers=function(){
 };
 
 window.onload=function(){
+    document.getElementById("suzyDescription").innerHTML="This is "+suzy.name;
+    document.getElementById("meghanDescription").innerHTML="This is "+meghan.name;
+    document.getElementById("daveDescription").innerHTML="This is "+dave.name;
+
 	let momButton = document.getElementById("momBtn");
 	momButton.addEventListener("click",findMothers,false);
+
     let dadButton = document.getElementById("dadBtn");
     dadButton.addEventListener("click",findFathers,false);
+
     let createButton = document.getElementById("create");
     createButton.addEventListener("click",function(){
         new person(document.getElementById("nameBox").value,document.getElementById("genderBox").value,document.getElementById("relationBox").value);
