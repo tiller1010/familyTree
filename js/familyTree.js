@@ -6,7 +6,7 @@ function person(name,gender,relation){
     this.relation=relation;
     familyCount.push(this);
 }
-person.prototype.sayName=function(){
+person.prototype.describe=function(){
     //console.log(this.name);
 };
 
@@ -55,6 +55,12 @@ window.onload=function(){
 
     let dadButton = document.getElementById("dadBtn");
     dadButton.addEventListener("click",findFathers,false);
+
+    $(function(){
+        $(".personBox").click(function(){
+            $(".description").slideToggle(300);
+        })
+    });
 
     let createButton = document.getElementById("create");
     createButton.addEventListener("click",function(){

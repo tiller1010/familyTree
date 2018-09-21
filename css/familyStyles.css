@@ -40,7 +40,7 @@ h1{
 }
 
 .description{
-	/*display: none;*/
+	display: none;
 	position: relative;
 	top:120px;
 	border:solid #aaa2b1;
