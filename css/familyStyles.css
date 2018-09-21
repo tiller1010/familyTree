@@ -41,6 +41,12 @@ h1{
 
 .description{
 	/*display: none;*/
+	position: relative;
+	top:120px;
+	border:solid #aaa2b1;
+	background-color:aliceblue;
+	border-radius:25px;
+	padding:15px;
 }
 
 .buttonWindow{
