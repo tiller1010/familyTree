@@ -68,7 +68,7 @@ window.onload=function(){
         document.getElementById("nameBox").value='';
         document.getElementById("genderBox").value='';
         document.getElementById("relationBox").value='';
-        $("#generation3").append("<div class='personBox' style='background-image:url("+document.getElementById("imageBox").value+");'</div>");
+        $("#generation3").append("<div class='personBox' style='background-image:url("+document.getElementById("imageBox").value+");'><div class='description'>This is "+suzy.name+"</div></div>");
         document.getElementById("imageBox").value='';
     },false);
 }
