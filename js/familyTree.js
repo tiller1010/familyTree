@@ -58,7 +58,7 @@ window.onload=function(){
 
     $(function(){
         $(".personBox").click(function(){
-            $(".description").slideToggle(300);
+            $(this).children().slideToggle(300);
         })
     });
 
