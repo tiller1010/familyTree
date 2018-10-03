@@ -1,4 +1,5 @@
 let familyCount=[];
+let familyID=2;
 
 function person(name,gender,relation){
     this.name=name;
@@ -64,11 +65,12 @@ window.onload=function(){
 
     let createButton = document.getElementById("create");
     createButton.addEventListener("click",function(){
+        familyID+=1;
         new person(document.getElementById("nameBox").value,document.getElementById("genderBox").value,document.getElementById("relationBox").value);
         document.getElementById("nameBox").value='';
         document.getElementById("genderBox").value='';
         document.getElementById("relationBox").value='';
-        let newPerson=$("<div class='personBox' style='background-image:url("+document.getElementById("imageBox").value+");'><div class='description'>This is "+suzy.name+"</div></div>").on('click',function(){
+        let newPerson=$("<div class='personBox' style='background-image:url("+document.getElementById("imageBox").value+");'><div class='description'>This is "+familyCount[familyID].name+"</div></div>").on('click',function(){
             $(this).children().slideToggle(300);
         });
         $("#generation3").append(newPerson);
