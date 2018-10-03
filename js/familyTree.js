@@ -50,17 +50,17 @@ window.onload=function(){
     document.getElementById("meghanDescription").innerHTML="This is "+meghan.name;
     document.getElementById("daveDescription").innerHTML="This is "+dave.name;
 
+    $(function(){
+        $(".personBox").click(function(){
+            $(this).children().slideToggle(300);
+        });
+    });
+
 	let momButton = document.getElementById("momBtn");
 	momButton.addEventListener("click",findMothers,false);
 
     let dadButton = document.getElementById("dadBtn");
     dadButton.addEventListener("click",findFathers,false);
-
-    $(function(){
-        $(".personBox").click(function(){
-            $(this).children().slideToggle(300);
-        })
-    });
 
     let createButton = document.getElementById("create");
     createButton.addEventListener("click",function(){
@@ -68,7 +68,11 @@ window.onload=function(){
         document.getElementById("nameBox").value='';
         document.getElementById("genderBox").value='';
         document.getElementById("relationBox").value='';
-        $("#generation3").append("<div class='personBox' style='background-image:url("+document.getElementById("imageBox").value+");'><div class='description'>This is "+suzy.name+"</div></div>");
+        let newPerson=$("<div class='personBox' style='background-image:url("+document.getElementById("imageBox").value+");'><div class='description'>This is "+suzy.name+"</div></div>").on('click',function(){
+            $(this).children().slideToggle(300);
+        });
+        $("#generation3").append(newPerson);
         document.getElementById("imageBox").value='';
     },false);
+
 }
