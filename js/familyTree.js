@@ -1,10 +1,11 @@
 let familyCount=[];
 let familyID=2;
 
-function person(name,gender,relation){
+function person(name,gender,relation,spouse){
     this.name=name;
     this.gender=gender;
     this.relation=relation;
+    this.spouse=spouse;
     familyCount.push(this);
 }
 person.prototype.describe=function(){
@@ -77,4 +78,13 @@ window.onload=function(){
         document.getElementById("imageBox").value='';
     },false);
 
+let canvas = document.getElementById('lines');
+let ctx = canvas.getContext('2d');
+ctx.beginPath();
+ctx.moveTo(90,0);
+ctx.lineTo(90,70);
+ctx.lineTo(250,70);
+ctx.stroke();
+
 }
+
