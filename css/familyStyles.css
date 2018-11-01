@@ -1,20 +1,33 @@
 body{
 	background-color:#e9e9fc;
 	height:1000px;
+	font-family:arial;
+}
+
+header{
+	height:100px;
+	background-color:#00a0ff;
+	box-shadow: 10px 10px black;
 }
 
 h1{
-	position: fixed;
-	top:7px;
+	position: relative;
+	width:fit-content;
+	top:20px;
 	margin-left:40%;
 	border:solid;
 	border-color:black;
 	border-radius:25px;
 	font-family:arial;
 	background-color:#254f73;
-	padding:8px;
+	padding:8px 40px 8px 40px;
 	color:#dfdbee;
 	font-style:italic;
+}
+
+main{
+	position: relative;
+	top:10px;
 }
 
 #controlPanel{
@@ -98,8 +111,8 @@ h1{
 	margin: 10px;
 }
 
-#generation3{
-	margin-top:150px;
+.generation{
+	margin-top:70px;
 	display:grid;
 	grid-template-columns:.5fr .5fr 1fr;
 }
