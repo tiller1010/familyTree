@@ -75,7 +75,7 @@ window.onload=function(){
         document.getElementById("imageBox").value='';
     },false);
 
-    for(i=1;i<familyCount.length;i++){
+    for(i=0;i<familyCount.length;i++){
 	    let canvas = document.getElementById('lines'+i);
 		let ctx = canvas.getContext('2d');
 		ctx.beginPath();
@@ -84,10 +84,12 @@ window.onload=function(){
 		if(familyCount[i].relation==='Mother'){
 			ctx.lineTo(250,70);
 			ctx.stroke();
+			console.log(familyCount[i]);
 		}
 		if(familyCount[i].relation==='Father'){
 			ctx.lineTo(0,70);
 			ctx.stroke();
+			console.log(familyCount[i]);
 		}
 	}
 }
