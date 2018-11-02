@@ -8,9 +8,6 @@ function person(name,gender,relation,spouse){
     this.spouse=spouse;
     familyCount.push(this);
 }
-person.prototype.describe=function(){
-    //console.log(this.name);
-};
 
 function familyMember(){}
 familyMember.prototype=Object.create(person.prototype);
@@ -78,13 +75,20 @@ window.onload=function(){
         document.getElementById("imageBox").value='';
     },false);
 
-let canvas = document.getElementById('lines');
-let ctx = canvas.getContext('2d');
-ctx.beginPath();
-ctx.moveTo(90,0);
-ctx.lineTo(90,70);
-ctx.lineTo(250,70);
-ctx.stroke();
-
+    for(i=1;i<familyCount.length;i++){
+	    let canvas = document.getElementById('lines'+i);
+		let ctx = canvas.getContext('2d');
+		ctx.beginPath();
+		ctx.moveTo(90,0);
+		ctx.lineTo(90,70);
+		if(familyCount[i].relation==='Mother'){
+			ctx.lineTo(250,70);
+			ctx.stroke();
+		}
+		if(familyCount[i].relation==='Father'){
+			ctx.lineTo(0,70);
+			ctx.stroke();
+		}
+	}
 }
 
