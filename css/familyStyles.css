@@ -91,19 +91,13 @@ main{
 }
 
 #createPerson{
-	position: relative;
-	top:-90px;
- 	
-	width: 200px;
+	width: fit-content;
 	padding: 10px;
 	border:solid;
 	border-color:#aaa2b1;
 	border-radius:25px;
 	font-family:arial;
 	background-color:aliceblue;
-}
-#createPerson:hover{
-	background-color:#346fa24d;
 }
 
 .typeBox{
@@ -114,6 +108,7 @@ main{
 	margin-top:70px;
 	display:grid;
 	grid-template-columns:.5fr .5fr 1fr;
+	border-bottom:solid black;
 }
 
 #suzy{

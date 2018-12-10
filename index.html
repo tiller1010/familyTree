@@ -16,14 +16,27 @@
 			<div class="description" id="madelineDescription"></div>
 		</div>
 
-		<div class="personBox" id="claire">
-			<div class="description" id="claireDescription"></div>
+		<div class="personBox" id="madeline">
+			<div id=createPerson class="descriptio">Add a new family member:<br/>
+				Spouse?<input type="checkbox"/>
+				<table>
+					<td>
+						Name:<input type="text" id="nameBox" class="typeBox"><br/>
+						Gender:<input type="text" id="genderBox" class="typeBox"><br/>
+						Relation:<input type="text" id="relationBox" class="typeBox" placeholder="mother or father"><br/>
+						Image:<input type="text" id="imageBox" class="typeBox" placeholder="image url"><br/>
+						<button id="create">Create</button>
+					</td>
+					<td>
+						Name:<input type="text" id="nameBox" class="typeBox"><br/>
+						Gender:<input type="text" id="genderBox" class="typeBox"><br/>
+						Relation:<input type="text" id="relationBox" class="typeBox" placeholder="mother or father"><br/>
+						Image:<input type="text" id="imageBox" class="typeBox" placeholder="image url"><br/>
+						<button id="create">Create</button>
+					</td>
+				</table>
+			</div>
 		</div>
-
-		<div class="personBox" id="stan">
-			<div class="description" id="stanDescription"></div>
-		</div>
-	</div>
 
 	<div id="generation2" class="generation">
 
@@ -31,13 +44,6 @@
 			<div class="description" id="darrenDescription"></div>
 		</div>
 
-		<div class="personBox" id="steve">
-			<div class="description" id="steveDescription"></div>
-		</div>
-
-		<div class="personBox" id="phil">
-			<div class="description" id="philDescription"></div>
-		</div>
 	</div>
 
 	<div id="generation3" class="generation">
@@ -48,20 +54,6 @@
 				</div>
 			</div>
 			<canvas height="100" width="250" id="lines0"></canvas>
-		</div>
-
-		<div>
-			<div class="personBox" id="meghan">
-				<div class="description" id="meghanDescription"></div>
-			</div>
-			<canvas height="100" width="250" id="lines1"></canvas>
-		</div>
-
-		<div>
-			<div class="personBox" id="dave">
-				<div class="description" id="daveDescription"></div>
-			</div>
-			<canvas height="100" width="250" id="lines2"></canvas>
 		</div>
 
 	</div>
@@ -82,8 +74,8 @@
 <div id=createPerson>Add a new family member:<br/>
 	Name:<input type="text" id="nameBox" class="typeBox"><br/>
 	Gender:<input type="text" id="genderBox" class="typeBox"><br/>
-	Relation:<input type="text" id="relationBox" class="typeBox"><br/>
-	Image:<input type="text" id="imageBox" class="typeBox"><br/>
+	Relation:<input type="text" id="relationBox" class="typeBox" placeholder="mother or father"><br/>
+	Image:<input type="text" id="imageBox" class="typeBox" placeholder="image url"><br/>
 	<button id="create">Create</button>
 </div>
 

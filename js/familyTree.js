@@ -45,9 +45,6 @@ let findMothers=function(){
 };
 
 window.onload=function(){
-    document.getElementById("suzyDescription").innerHTML="This is "+suzy.name;
-    document.getElementById("meghanDescription").innerHTML="This is "+meghan.name;
-    document.getElementById("daveDescription").innerHTML="This is "+dave.name;
 
     $(function(){
         $(".personBox").click(function(){
