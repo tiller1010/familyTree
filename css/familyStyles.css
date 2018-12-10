@@ -63,6 +63,7 @@ main{
 }
 
 .addPerson{
+	color:white;
 	font-size: 140px;
 	text-align: center;
 	line-height: 120px;
@@ -110,6 +111,7 @@ main{
 }
 
 #createPerson{
+	position: absolute;
 	width: fit-content;
 	padding: 10px;
 	border:solid;
@@ -117,6 +119,9 @@ main{
 	border-radius:25px;
 	font-family:arial;
 	background-color:aliceblue;
+}
+#spouseCreate{
+	display: none;
 }
 
 .typeBox{

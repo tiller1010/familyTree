@@ -16,9 +16,10 @@
 			<div class="description" id="madelineDescription"></div>
 		</div>
 
+		<div id="creationContainer">
 		<div class="addPerson">+</div>
-			<div id=createPerson>Add a new family member:<br/>
-				Spouse?<input type="checkbox"/>
+			<div id="createPerson">Add a new family member:<br/>
+				Spouse?<input type="checkbox" id="spouseCheck"/>
 				<table>
 					<td>
 						Name:<input type="text" id="nameBox" class="typeBox"><br/>
@@ -27,15 +28,15 @@
 						Image:<input type="text" id="imageBox" class="typeBox" placeholder="image url"><br/>
 						<button id="create">Create</button>
 					</td>
-					<td>
+					<td id="spouseCreate">
 						Name:<input type="text" id="nameBox" class="typeBox"><br/>
 						Gender:<input type="text" id="genderBox" class="typeBox"><br/>
 						Relation:<input type="text" id="relationBox" class="typeBox" placeholder="mother or father"><br/>
 						Image:<input type="text" id="imageBox" class="typeBox" placeholder="image url"><br/>
-						<button id="create">Create</button>
 					</td>
 				</table>
 			</div>
+		</div>
 
 	<div id="generation2" class="generation">
 

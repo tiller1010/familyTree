@@ -52,6 +52,23 @@ window.onload=function(){
         });
     });
 
+    $(function(){
+        $(".addPerson").click(function(){
+            $("#createPerson").slideToggle(300);
+        });
+    });
+
+    const spouseCheck=document.getElementById('spouseCheck');
+    const spouseWindow=document.getElementById('spouseCreate');
+    spouseCheck.addEventListener('change',function(){
+        if(this.checked){
+            spouseWindow.style.display='block';
+        }
+        else{
+            spouseWindow.style.display='none';
+        }
+    });
+
 	let momButton = document.getElementById("momBtn");
 	momButton.addEventListener("click",findMothers,false);
 
