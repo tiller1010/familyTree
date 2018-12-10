@@ -68,22 +68,45 @@ main{
 }
 .addPerson{
 	color:white;
-	font-size: 140px;
+	font-size: 45px;
+	line-height:65px;
 	text-align: center;
-	line-height: 120px;
 	margin:30px;
 	width: 120px;
 	height: 120px;
 	border-style:solid;
 	border-radius:25px;
 	background-color: #aaa2b1;
-	background-position:center;
-	background-size:100px;
-	background-repeat:no-repeat;
 }
 .addPerson:hover{
 	background-color:#44c3c3;
 	cursor: pointer;
+}
+
+#createPerson{
+	position: relative;
+	top:-55px;
+	left:130px;
+}
+#createPerson header{
+	position: absolute;
+	top:-100px;
+	left:10px;
+	width: 180px;
+	z-index: 3;
+}
+#spouseCreate{
+	display: none;
+}
+#creationTable{
+	position: absolute;
+	width: fit-content;
+	padding: 10px;
+	border:solid;
+	border-color:#aaa2b1;
+	border-radius:25px;
+	font-family:arial;
+	background-color:aliceblue;
 }
 
 .buttonWindow{
@@ -114,21 +137,6 @@ main{
 	top:55%;
 }
 
-#createPerson{
-	display: none;
-	position: absolute;
-	width: fit-content;
-	padding: 10px;
-	border:solid;
-	border-color:#aaa2b1;
-	border-radius:25px;
-	font-family:arial;
-	background-color:aliceblue;
-}
-#spouseCreate{
-	display: none;
-}
-
 .typeBox{
 	margin: 10px;
 }
@@ -136,16 +144,4 @@ main{
 .generation{
 	height:300px;
 	border-bottom:solid black;
-}
-
-#suzy{
-	background-image:url(https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg-1024x683.jpg);
-}
-
-#meghan{
-	background-image:url(https://www.abilitynet.org.uk/sites/abilitynet.org.uk/files/admin/Rhianna_Kinchin.jpg);
-}
-
-#dave{
-	background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNEp35r5gO-TT20q4tFKhpyHdmiOT20r5cdoB8jhbcfo2QMLAwGg);
 }

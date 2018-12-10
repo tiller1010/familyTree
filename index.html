@@ -10,17 +10,25 @@
 <body>
 <header><h1>Family Tree</h1></header>
 <main>
-	<div id="generation1" class="generation">
+	<table id='mainLayout'>
+	<tr id="generation1" class="generation">
 
-		<div class="personBox" id="madeline">
+		<td class="personBox" id="madeline">
 			<div class="description" id="madelineDescription"></div>
-		</div>
+		</td>
 
-		<div class="creationContainer">
-		<div class="addPerson">+</div>
-			<div id="createPerson">Add a new family member:<br/>
+		<td class="personBox" id="madeline">
+			<div class="description" id="madelineDescription"></div>
+		</td>
+
+		<td class="creationContainer">
+			<div class="addPerson">Add<br/>+</div>
+			<div id="createPerson">
+				<header>
+				<h3>Add a new family member:</h3>
 				Spouse?<input type="checkbox" id="spouseCheck"/>
-				<table>
+				</header>
+				<table id="creationTable">
 					<td>
 						Name:<input type="text" id="nameBox" class="typeBox"><br/>
 						Gender:<input type="text" id="genderBox" class="typeBox"><br/>
@@ -36,9 +44,14 @@
 					</td>
 				</table>
 			</div>
-		</div>
-	</div>
+		</td>
+	</tr>
+</table>
 	<div id="generation2" class="generation">
+
+		<div class="personBox" id="darren">
+			<div class="description" id="darrenDescription"></div>
+		</div>
 
 		<div class="personBox" id="darren">
 			<div class="description" id="darrenDescription"></div>
@@ -62,14 +75,14 @@
 <div id="controlPanel">
 
 	<div id="momContainer" class="buttonWindow">
-	<button id="momBtn" class="btn">Find all mothers</button>
-	<div id="momCount" class="count"></div>
-</div>
+		<button id="momBtn" class="btn">Find all mothers</button>
+		<div id="momCount" class="count"></div>
+	</div>
 
 	<div id="dadContainer" class="buttonWindow">
-	<button id="dadBtn" class="btn">Find all fathers</button>
-	<div id="dadCount" class="count"></div>
-</div>
+		<button id="dadBtn" class="btn">Find all fathers</button>
+		<div id="dadCount" class="count"></div>
+	</div>
 
 </div>
 </body>

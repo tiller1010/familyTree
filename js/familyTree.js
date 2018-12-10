@@ -54,7 +54,7 @@ window.onload=function(){
 
     $(function(){
         $(".addPerson").click(function(){
-            $("#createPerson").slideToggle(300);
+            $("#createPerson").toggle();
         });
     });
 
