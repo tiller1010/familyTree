@@ -37,6 +37,7 @@ main{
 }
 
 .personBox{
+	display: inline-block;
 	margin:30px;
 	width: 120px;
 	height: 120px;
@@ -62,6 +63,9 @@ main{
 	padding:15px;
 }
 
+.creationContainer{
+	display: inline-block;
+}
 .addPerson{
 	color:white;
 	font-size: 140px;
@@ -93,7 +97,7 @@ main{
 	height:100px;
 }
 .buttonWindow:hover{
-	background-color:#346fa24d;
+	background-color:#aaaaff;
 	cursor: pointer;
 }
 
@@ -111,6 +115,7 @@ main{
 }
 
 #createPerson{
+	display: none;
 	position: absolute;
 	width: fit-content;
 	padding: 10px;
@@ -129,9 +134,7 @@ main{
 }
 
 .generation{
-	margin-top:70px;
-	display:grid;
-	grid-template-columns:.5fr .5fr 1fr;
+	height:300px;
 	border-bottom:solid black;
 }
 
