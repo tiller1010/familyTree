@@ -62,6 +62,25 @@ main{
 	padding:15px;
 }
 
+.addPerson{
+	font-size: 140px;
+	text-align: center;
+	line-height: 120px;
+	margin:30px;
+	width: 120px;
+	height: 120px;
+	border-style:solid;
+	border-radius:25px;
+	background-color: #aaa2b1;
+	background-position:center;
+	background-size:100px;
+	background-repeat:no-repeat;
+}
+.addPerson:hover{
+	background-color:#44c3c3;
+	cursor: pointer;
+}
+
 .buttonWindow{
 	position: relative;
 	top:-110px;
