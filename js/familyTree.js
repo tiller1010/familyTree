@@ -72,14 +72,33 @@ window.onload=function(){
         let parenthood1=document.getElementById("parentBox1").value;
         let image1=document.getElementById("imageBox1").value;
         let newPerson=new person(name1,gender1,parenthood1);
-        let newFrame=$("<div class='personBox' style='background-image:url("+image1+");'><div class='description'>This is "+newPerson.name+"</div></div>").on('click',function(){
+        var newFrame=$("<td class='personBox' style='background-image:url("+image1+");'><div class='description'>This is "+newPerson.name+"</div></td>").on('click',function(){
             $(this).children().slideToggle(300);
         });
-        $("#generation1").append(newFrame);
+
+        if(spouseCheck.checked){ 
+            let name2=document.getElementById("nameBox2").value;
+            let gender2=document.getElementById("genderBox2").value;
+            let parenthood2=document.getElementById("parentBox2").value;
+            let image2=document.getElementById("imageBox2").value;
+            let newSpouse=new person(name2,gender2,parenthood2);
+            var spouseFrame=$("<td class='personBox' style='background-image:url("+image2+");'><div class='description'>This is "+newSpouse.name+"</div></td>").on('click',function(){
+                $(this).children().slideToggle(300);
+            });
+        }
+        
+        $("#creation1").before(newFrame);
+        if(spouseCheck.checked){
+            $("#creation1").before(spouseFrame);
+        }
         document.getElementById("nameBox1").value='';
         document.getElementById("genderBox1").value='';
-        document.getElementById("relationBox1").value='';
+        document.getElementById("parentBox1").value='';
         document.getElementById("imageBox1").value='';
+        document.getElementById("nameBox2").value='';
+        document.getElementById("genderBox2").value='';
+        document.getElementById("parentBox2").value='';
+        document.getElementById("imageBox2").value='';
     },false);
 
  //    for(i=0;i<familyCount.length;i++){
