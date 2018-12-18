@@ -84,6 +84,7 @@ main{
 }
 
 #createPerson{
+	display:none;
 	position: relative;
 	top:-55px;
 	left:130px;

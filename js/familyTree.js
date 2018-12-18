@@ -52,6 +52,8 @@ window.onload=function(){
     const spouseWindow1=document.getElementById('spouseCreate1');
     const spouseCheck2=document.getElementById('spouseCheck2');
     const spouseWindow2=document.getElementById('spouseCreate2');
+    const spouseCheck3=document.getElementById('spouseCheck3');
+    const spouseWindow3=document.getElementById('spouseCreate3');
     spouseCheck1.addEventListener('change',function(){
         if(this.checked){
             spouseWindow1.style.display='block';
@@ -66,6 +68,14 @@ window.onload=function(){
         }
         else{
             spouseWindow2.style.display='none';
+        }
+    });
+    spouseCheck3.addEventListener('change',function(){
+        if(this.checked){
+            spouseWindow3.style.display='block';
+        }
+        else{
+            spouseWindow3.style.display='none';
         }
     });
 

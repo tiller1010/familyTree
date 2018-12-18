@@ -65,7 +65,7 @@
 			<div class="description" id="darrenDescription"></div>
 		</td>
 
-<td class="creationContainer" id="creation2">
+		<td class="creationContainer" id="creation2">
 			<div class="addPerson">Add<br/>+</div>
 			<div id="createPerson">
 				<header>
@@ -101,14 +101,42 @@
 
 	<tr id="generation3" class="generation">
 
-		<td>
-			<div class="personBox" id="suzy">
-				<div class="description" id="suzyDescription">
-				</div>
-			</div>
-			<canvas height="100" width="250" id="lines0"></canvas>
+		<td class="personBox" id="suzy">
+				<div class="description" id="suzyDescription"></div>
 		</td>
 
+		<td class="creationContainer" id="creation3">
+			<div class="addPerson">Add<br/>+</div>
+			<div id="createPerson">
+				<header>
+				<h3>Add a new family member:</h3>
+				Spouse?<input type="checkbox" id="spouseCheck3"/>
+				</header>
+				<table id="creationTable">
+					<td>
+						Name:<input type="text" id="3nameBox1" class="typeBox"><br/>
+						Gender:<input type="text" id="3genderBox1" class="typeBox"><br/>
+						Parenthood:<select id="3parentBox1" class="typeBox">
+										<option>none</option>
+										<option>Father</option>
+										<option>Mother</option>
+								</select>
+						Image:<input type="text" id="3imageBox1" class="typeBox" placeholder="image url"><br/>
+						<button id="create3">Create</button>
+					</td>
+					<td id="spouseCreate3" class="spouseCreate">
+						Name:<input type="text" id="3nameBox2" class="typeBox"><br/>
+						Gender:<input type="text" id="3genderBox2" class="typeBox"><br/>
+						Parenthood:<select id="3parentBox2" class="typeBox" placeholder="Mother or Father">
+										<option>none</option>
+										<option>Father</option>
+										<option>Mother</option>
+								</select>
+						Image:<input type="text" id="3imageBox2" class="typeBox" placeholder="image url"><br/>
+					</td>
+				</table>
+			</div>
+		</td>
 	</tr>
 </table>
 </main>
