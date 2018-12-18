@@ -48,14 +48,24 @@ window.onload=function(){
         });
     });
 
-    const spouseCheck=document.getElementById('spouseCheck');
-    const spouseWindow=document.getElementById('spouseCreate');
-    spouseCheck.addEventListener('change',function(){
+    const spouseCheck1=document.getElementById('spouseCheck1');
+    const spouseWindow1=document.getElementById('spouseCreate1');
+    const spouseCheck2=document.getElementById('spouseCheck2');
+    const spouseWindow2=document.getElementById('spouseCreate2');
+    spouseCheck1.addEventListener('change',function(){
         if(this.checked){
-            spouseWindow.style.display='block';
+            spouseWindow1.style.display='block';
         }
         else{
-            spouseWindow.style.display='none';
+            spouseWindow1.style.display='none';
+        }
+    });
+    spouseCheck2.addEventListener('change',function(){
+        if(this.checked){
+            spouseWindow2.style.display='block';
+        }
+        else{
+            spouseWindow2.style.display='none';
         }
     });
 
@@ -79,6 +89,7 @@ window.onload=function(){
             $(this).children().slideToggle(300);
         });
 
+        let spouseCheck=document.getElementById("spouseCheck"+generation);
         if(spouseCheck.checked){ 
             let name2=document.getElementById(generation+"nameBox2").value;
             let gender2=document.getElementById(generation+"genderBox2").value;
@@ -90,9 +101,9 @@ window.onload=function(){
             });
         }
         
-        $("#creation1").before(newFrame);
+        $("#creation"+generation).before(newFrame);
         if(spouseCheck.checked){
-            $("#creation1").before(spouseFrame);
+            $("#creation"+generation).before(spouseFrame);
         }
         document.getElementById(generation+"nameBox1").value='';
         document.getElementById(generation+"genderBox1").value='';
@@ -107,10 +118,10 @@ window.onload=function(){
     gen1CreateButton.addEventListener("click",function(){
         personCreator("1");
     },false);
-    gen1CreateButton.addEventListener("click",function(){
+    gen2CreateButton.addEventListener("click",function(){
         personCreator("2");
     },false);
-    gen1CreateButton.addEventListener("click",function(){
+    gen3CreateButton.addEventListener("click",function(){
         personCreator("3");
     },false);
 
