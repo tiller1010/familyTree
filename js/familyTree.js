@@ -1,11 +1,25 @@
 var familyCount=[];
+var generation1Count=[];
+var generation2Count=[];
+var generation3Count=[];
 
-function person(name,gender,parenthood,spouse){
+function person(name,gender,parenthood,generation){
     this.name=name;
     this.gender=gender;
     this.parenthood=parenthood;
-    this.spouse=spouse;
+    this.generation=generation;
     familyCount.push(this);
+    switch(generation){
+        case '1':
+            generation1Count.push(this);
+            break;
+        case '2':
+            generation2Count.push(this);
+            break;
+        case '3':
+            generation3Count.push(this);
+            break;
+    }
 }
 
 // let suzy = new person("Suzy","female","Mother");
@@ -94,7 +108,7 @@ window.onload=function(){
         let gender1=document.getElementById(generation+"genderBox1").value;
         let parenthood1=document.getElementById(generation+"parentBox1").value;
         let image1=document.getElementById(generation+"imageBox1").value;
-        let newPerson=new person(name1,gender1,parenthood1);
+        let newPerson=new person(name1,gender1,parenthood1,generation);
         var newFrame=$("<td class='personBox' style='background-image:url("+image1+");'><div class='description'>This is "+newPerson.name+"</div></td>").on('click',function(){
             $(this).children().slideToggle(300);
         });
@@ -105,7 +119,7 @@ window.onload=function(){
             let gender2=document.getElementById(generation+"genderBox2").value;
             let parenthood2=document.getElementById(generation+"parentBox2").value;
             let image2=document.getElementById(generation+"imageBox2").value;
-            let newSpouse=new person(name2,gender2,parenthood2);
+            let newSpouse=new person(name2,gender2,parenthood2,generation);
             var spouseFrame=$("<td class='personBox' style='background-image:url("+image2+");'><div class='description'>This is "+newSpouse.name+"</div></td>").on('click',function(){
                 $(this).children().slideToggle(300);
             });
@@ -127,13 +141,13 @@ window.onload=function(){
 
     gen1CreateButton.addEventListener("click",function(){
         personCreator("1");
-    },false);
+    });
     gen2CreateButton.addEventListener("click",function(){
         personCreator("2");
-    },false);
+    });
     gen3CreateButton.addEventListener("click",function(){
         personCreator("3");
-    },false);
+    });
 
  //    for(i=0;i<familyCount.length;i++){
 	//     let canvas = document.getElementById('lines'+i);
