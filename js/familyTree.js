@@ -50,6 +50,19 @@ let findMothers=function(){
 
 window.onload=function(){
 
+    function updateParents(){
+        const gen1Parents1=document.getElementById('2childOf1');
+        const gen1Parents2=document.getElementById('2childOf2');
+        // const gen2Parents=document.getElementsByClassName('3childOf');
+        for(i=0;i<generation1Count.length;i++){
+            let option=document.createElement('option');
+            let parent=document.createTextNode(generation1Count[i].name);
+            option.appendChild(parent);
+            gen1Parents1.appendChild(option);
+            gen1Parents2.appendChild(option);
+        }
+    }
+
     $(function(){
         $(".personBox").click(function(){
             $(this).children().slideToggle(300);
@@ -137,6 +150,8 @@ window.onload=function(){
         document.getElementById(generation+"genderBox2").value='';
         document.getElementById(generation+"parentBox2").value='';
         document.getElementById(generation+"imageBox2").value='';
+
+        updateParents();
     }
 
     gen1CreateButton.addEventListener("click",function(){
