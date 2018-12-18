@@ -44,7 +44,7 @@ window.onload=function(){
 
     $(function(){
         $(".addPerson").click(function(){
-            $("#createPerson").toggle();
+            $(this).next().toggle();
         });
     });
 
@@ -65,22 +65,25 @@ window.onload=function(){
     let dadButton = document.getElementById("dadBtn");
     dadButton.addEventListener("click",findFathers,false);
 
-    let createButton = document.getElementById("create");
-    createButton.addEventListener("click",function(){
-        let name1=document.getElementById("nameBox1").value;
-        let gender1=document.getElementById("genderBox1").value;
-        let parenthood1=document.getElementById("parentBox1").value;
-        let image1=document.getElementById("imageBox1").value;
+    let gen1CreateButton = document.getElementById("create1");
+    let gen2CreateButton = document.getElementById("create2");
+    let gen3CreateButton = document.getElementById("create3");
+
+    let personCreator=function(generation){
+        let name1=document.getElementById(generation+"nameBox1").value;
+        let gender1=document.getElementById(generation+"genderBox1").value;
+        let parenthood1=document.getElementById(generation+"parentBox1").value;
+        let image1=document.getElementById(generation+"imageBox1").value;
         let newPerson=new person(name1,gender1,parenthood1);
         var newFrame=$("<td class='personBox' style='background-image:url("+image1+");'><div class='description'>This is "+newPerson.name+"</div></td>").on('click',function(){
             $(this).children().slideToggle(300);
         });
 
         if(spouseCheck.checked){ 
-            let name2=document.getElementById("nameBox2").value;
-            let gender2=document.getElementById("genderBox2").value;
-            let parenthood2=document.getElementById("parentBox2").value;
-            let image2=document.getElementById("imageBox2").value;
+            let name2=document.getElementById(generation+"nameBox2").value;
+            let gender2=document.getElementById(generation+"genderBox2").value;
+            let parenthood2=document.getElementById(generation+"parentBox2").value;
+            let image2=document.getElementById(generation+"imageBox2").value;
             let newSpouse=new person(name2,gender2,parenthood2);
             var spouseFrame=$("<td class='personBox' style='background-image:url("+image2+");'><div class='description'>This is "+newSpouse.name+"</div></td>").on('click',function(){
                 $(this).children().slideToggle(300);
@@ -91,14 +94,24 @@ window.onload=function(){
         if(spouseCheck.checked){
             $("#creation1").before(spouseFrame);
         }
-        document.getElementById("nameBox1").value='';
-        document.getElementById("genderBox1").value='';
-        document.getElementById("parentBox1").value='';
-        document.getElementById("imageBox1").value='';
-        document.getElementById("nameBox2").value='';
-        document.getElementById("genderBox2").value='';
-        document.getElementById("parentBox2").value='';
-        document.getElementById("imageBox2").value='';
+        document.getElementById(generation+"nameBox1").value='';
+        document.getElementById(generation+"genderBox1").value='';
+        document.getElementById(generation+"parentBox1").value='';
+        document.getElementById(generation+"imageBox1").value='';
+        document.getElementById(generation+"nameBox2").value='';
+        document.getElementById(generation+"genderBox2").value='';
+        document.getElementById(generation+"parentBox2").value='';
+        document.getElementById(generation+"imageBox2").value='';
+    }
+
+    gen1CreateButton.addEventListener("click",function(){
+        personCreator("1");
+    },false);
+    gen1CreateButton.addEventListener("click",function(){
+        personCreator("2");
+    },false);
+    gen1CreateButton.addEventListener("click",function(){
+        personCreator("3");
     },false);
 
  //    for(i=0;i<familyCount.length;i++){
