@@ -36,6 +36,11 @@ main{
 	right:0px;
 }
 
+th{
+	font-size:27px;
+	position: absolute;
+}
+
 .personBox{
 	display: inline-block;
 	margin:30px;
