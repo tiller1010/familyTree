@@ -30,10 +30,12 @@ let findFathers=function(){
     let regEx=/Father/i;
     for(i=0;i<familyCount.length;i++){
         if(regEx.test(familyCount[i].parenthood)){
-            fathers.push(familyCount[i].name+'<br/>');
+            fathers.push(familyCount[i].name);
         }
     }
-        document.getElementById("dadCount").innerHTML=fathers;
+    for(i=0;i<fathers.length;i++){
+        document.getElementById("dadCount").innerHTML+=fathers[i]+'<br/>';
+    }
 };
 
 let findMothers=function(){
@@ -41,10 +43,12 @@ let findMothers=function(){
     let regEx=/Mother/i;
     for(i=0;i<familyCount.length;i++){
         if(regEx.test(familyCount[i].parenthood)){
-            mothers.push(familyCount[i].name+'<br/>');
+            mothers.push(familyCount[i].name);
         }
     }
-    	document.getElementById("momCount").innerHTML=mothers;
+    for(i=0;i<mothers.length;i++){
+        document.getElementById("momCount").innerHTML+=mothers[i]+'<br/>';
+    }
 
 };
 
