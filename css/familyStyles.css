@@ -25,6 +25,10 @@ h1{
 	font-style:italic;
 }
 
+#mainLayout{
+	width:80%;
+}
+
 main{
 	position: relative;
 	top:10px;
@@ -32,8 +36,8 @@ main{
 
 #controlPanel{
 	position: fixed;
-	top:150px;
-	right:0px;
+	top:250px;
+	right:20px;
 }
 
 th{
@@ -123,7 +127,8 @@ th{
 	border-color:#aaa2b1;
 	border-radius:25px;
 	width:150px;
-	height:100px;
+	height:fit-content;
+	padding:10px 20px 20px 15px;
 }
 .buttonWindow:hover{
 	background-color:#aaaaff;
@@ -131,16 +136,18 @@ th{
 }
 
 .btn{
-	margin-left:10%;
-	margin-top:10%;
+	text-align: center;
+	margin-top:1px;
 	border-radius:25px;
 }
 
 .count{
 	font-family:arial;
-	position: absolute;
-	left: 5%;
-	top:55%;
+	position: relative;
+	left: 10px;
+	top:10px;
+	height:fit-content;
+	width:120px;
 }
 
 .typeBox{

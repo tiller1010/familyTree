@@ -30,7 +30,7 @@ let findFathers=function(){
     let regEx=/Father/i;
     for(i=0;i<familyCount.length;i++){
         if(regEx.test(familyCount[i].parenthood)){
-            fathers.push(familyCount[i].name);
+            fathers.push(familyCount[i].name+'<br/>');
         }
     }
         document.getElementById("dadCount").innerHTML=fathers;
@@ -41,7 +41,7 @@ let findMothers=function(){
     let regEx=/Mother/i;
     for(i=0;i<familyCount.length;i++){
         if(regEx.test(familyCount[i].parenthood)){
-            mothers.push(familyCount[i].name);
+            mothers.push(familyCount[i].name+'<br/>');
         }
     }
     	document.getElementById("momCount").innerHTML=mothers;
@@ -53,13 +53,21 @@ window.onload=function(){
     function updateParents(){
         const gen1Parents1=document.getElementById('2childOf1');
         const gen1Parents2=document.getElementById('2childOf2');
-        // const gen2Parents=document.getElementsByClassName('3childOf');
+        const gen2Parents1=document.getElementById('3childOf1');
+        const gen2Parents2=document.getElementById('3childOf2');
         for(i=0;i<generation1Count.length;i++){
             let option=document.createElement('option');
             let parent=document.createTextNode(generation1Count[i].name);
             option.appendChild(parent);
             gen1Parents1.appendChild(option);
-            gen1Parents2.appendChild(option);
+            gen1Parents2.appendChild(option.cloneNode(true));
+        }
+        for(i=0;i<generation2Count.length;i++){
+            let option=document.createElement('option');
+            let parent=document.createTextNode(generation2Count[i].name);
+            option.appendChild(parent);
+            gen2Parents1.appendChild(option);
+            gen2Parents2.appendChild(option.cloneNode(true));
         }
     }
 
