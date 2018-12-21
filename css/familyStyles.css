@@ -120,6 +120,7 @@ th{
 	border-radius:25px;
 	font-family:arial;
 	background-color:aliceblue;
+	z-index: 2
 }
 
 .buttonWindow{

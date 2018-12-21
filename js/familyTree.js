@@ -4,6 +4,8 @@ var generation2Count=[];
 var generation3Count=[];
 var motherslisted=[];
 var fatherslisted=[];
+var gen2listedParents=[];
+var gen3listedParents=[];
 
 function person(name,gender,parenthood,generation,childOf){
     this.name=name;
@@ -66,18 +68,24 @@ window.onload=function(){
         const gen2Parents1=document.getElementById('3childOf1');
         const gen2Parents2=document.getElementById('3childOf2');
         for(i=0;i<generation1Count.length;i++){
-            let option=document.createElement('option');
-            let parent=document.createTextNode(generation1Count[i].name);
-            option.appendChild(parent);
-            gen1Parents1.appendChild(option);
-            gen1Parents2.appendChild(option.cloneNode(true));
+            if(generation1Count[i]!=gen2listedParents[i]){
+                let option=document.createElement('option');
+                let parent=document.createTextNode(generation1Count[i].name);
+                option.appendChild(parent);
+                gen1Parents1.appendChild(option);
+                gen1Parents2.appendChild(option.cloneNode(true));
+                gen2listedParents.push(generation1Count[i]);
+            }
         }
         for(i=0;i<generation2Count.length;i++){
-            let option=document.createElement('option');
-            let parent=document.createTextNode(generation2Count[i].name);
-            option.appendChild(parent);
-            gen2Parents1.appendChild(option);
-            gen2Parents2.appendChild(option.cloneNode(true));
+            if(generation2Count[i]!=gen3listedParents[i]){
+                let option=document.createElement('option');
+                let parent=document.createTextNode(generation2Count[i].name);
+                option.appendChild(parent);
+                gen2Parents1.appendChild(option);
+                gen2Parents2.appendChild(option.cloneNode(true));
+                gen3listedParents.push(generation2Count[i]);
+            }
         }
     }
 
