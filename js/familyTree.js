@@ -3,11 +3,12 @@ var generation1Count=[];
 var generation2Count=[];
 var generation3Count=[];
 
-function person(name,gender,parenthood,generation){
+function person(name,gender,parenthood,generation,childOf){
     this.name=name;
     this.gender=gender;
     this.parenthood=parenthood;
     this.generation=generation;
+    this.childOf=childOf;
     familyCount.push(this);
     switch(generation){
         case '1':
@@ -21,9 +22,6 @@ function person(name,gender,parenthood,generation){
             break;
     }
 }
-
-// let suzy = new person("Suzy","female","Mother");
-// suzy.constructor=familyMember;
 
 let findFathers=function(){
     let fathers=[];
@@ -54,6 +52,7 @@ let findMothers=function(){
 
 window.onload=function(){
 
+    //Updates options to select parents
     function updateParents(){
         const gen1Parents1=document.getElementById('2childOf1');
         const gen1Parents2=document.getElementById('2childOf2');
@@ -75,18 +74,21 @@ window.onload=function(){
         }
     }
 
+    //Adds description animation
     $(function(){
         $(".personBox").click(function(){
             $(this).children().slideToggle(300);
         });
     });
 
+    //Adds ability to toggle creation table
     $(function(){
         $(".addPerson").click(function(){
             $(this).next().toggle();
         });
     });
 
+    //Checks for spouse checkmark
     const spouseCheck1=document.getElementById('spouseCheck1');
     const spouseWindow1=document.getElementById('spouseCreate1');
     const spouseCheck2=document.getElementById('spouseCheck2');
@@ -118,12 +120,15 @@ window.onload=function(){
         }
     });
 
+    //Event listeners for mothers and fathers
 	let momButton = document.getElementById("momBtn");
 	momButton.addEventListener("click",findMothers,false);
 
     let dadButton = document.getElementById("dadBtn");
     dadButton.addEventListener("click",findFathers,false);
 
+
+    //Creating a new person(s) and adding event listeners
     let gen1CreateButton = document.getElementById("create1");
     let gen2CreateButton = document.getElementById("create2");
     let gen3CreateButton = document.getElementById("create3");
@@ -133,7 +138,14 @@ window.onload=function(){
         let gender1=document.getElementById(generation+"genderBox1").value;
         let parenthood1=document.getElementById(generation+"parentBox1").value;
         let image1=document.getElementById(generation+"imageBox1").value;
-        let newPerson=new person(name1,gender1,parenthood1,generation);
+        try{
+            if(!document.getElementById(generation+"childOf1")) throw "No parent";
+            var childOf1=document.getElementById(generation+"childOf1").value;
+        }
+        catch(error){
+            var childOf1=error;
+        }
+        let newPerson=new person(name1,gender1,parenthood1,generation,childOf1);
         var newFrame=$("<td class='personBox' style='background-image:url("+image1+");'><div class='description'>This is "+newPerson.name+"</div></td>").on('click',function(){
             $(this).children().slideToggle(300);
         });
@@ -144,7 +156,14 @@ window.onload=function(){
             let gender2=document.getElementById(generation+"genderBox2").value;
             let parenthood2=document.getElementById(generation+"parentBox2").value;
             let image2=document.getElementById(generation+"imageBox2").value;
-            let newSpouse=new person(name2,gender2,parenthood2,generation);
+            try{
+                if(!document.getElementById(generation+"childOf2")) throw "No parent";
+                var childOf2=document.getElementById(generation+"childOf2").value;
+            }
+            catch(error){
+                var childOf2=error;
+            }
+            let newSpouse=new person(name2,gender2,parenthood2,generation,childOf2);
             var spouseFrame=$("<td class='personBox' style='background-image:url("+image2+");'><div class='description'>This is "+newSpouse.name+"</div></td>").on('click',function(){
                 $(this).children().slideToggle(300);
             });

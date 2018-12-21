@@ -27,6 +27,8 @@ h1{
 
 #mainLayout{
 	width:80%;
+	position: relative;
+	top:20px;
 }
 
 main{
@@ -100,9 +102,10 @@ th{
 }
 #createPerson header{
 	position: absolute;
-	top:-100px;
+	top:-110px;
 	left:10px;
 	width: 180px;
+	padding:2px 2px 8px 6px;
 	z-index: 3;
 }
 .spouseCreate{
