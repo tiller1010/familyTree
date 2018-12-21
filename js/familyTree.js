@@ -2,6 +2,8 @@ var familyCount=[];
 var generation1Count=[];
 var generation2Count=[];
 var generation3Count=[];
+var motherslisted=[];
+var fatherslisted=[];
 
 function person(name,gender,parenthood,generation,childOf){
     this.name=name;
@@ -32,7 +34,10 @@ let findFathers=function(){
         }
     }
     for(i=0;i<fathers.length;i++){
-        document.getElementById("dadCount").innerHTML+=fathers[i]+'<br/>';
+        if(fathers[i]!=fatherslisted[i]){
+            document.getElementById("dadCount").innerHTML+=fathers[i]+'<br/>';
+            fatherslisted.push(fathers[i]);
+        }
     }
 };
 
@@ -45,9 +50,11 @@ let findMothers=function(){
         }
     }
     for(i=0;i<mothers.length;i++){
-        document.getElementById("momCount").innerHTML+=mothers[i]+'<br/>';
+        if(mothers[i]!=motherslisted[i]){
+            document.getElementById("momCount").innerHTML+=mothers[i]+'<br/>';
+            motherslisted.push(mothers[i]);
+        }
     }
-
 };
 
 window.onload=function(){
