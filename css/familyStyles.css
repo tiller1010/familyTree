@@ -62,7 +62,7 @@ th{
 	margin:30px;
 	width: 120px;
 	height: 120px;
-	border-style:solid;
+	border: solid #225;
 	border-radius:25px;
 	background-color: #aaa2b1;
 	background-position:center;
@@ -168,7 +168,15 @@ th{
 	margin: 10px;
 }
 
+.urlTypeBox{
+	visibility: hidden;
+	margin: 10px;
+}
+
+.uploadImageFile{
+	visibility: hidden;
+}
+
 .generation{
 	height:300px;
-	border-bottom:solid black;
 }

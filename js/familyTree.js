@@ -135,6 +135,111 @@ window.onload=function(){
         }
     });
 
+    //Define all radio buttons and input options
+    const imageRadio1_1 = document.getElementById('1imageRadio1');
+    const uploadRadio1_1 = document.getElementById('1uploadRadio1');
+    const urlRadio1_1 = document.getElementById('1urlRadio1');
+    const uploadImageBox1_1 = document.getElementById('1uploadImageBox1');
+    const imageBox1_1 = document.getElementById('1imageBox1');
+
+    const imageRadio1_2 = document.getElementById('1imageRadio2');
+    const uploadRadio1_2 = document.getElementById('1uploadRadio2');
+    const urlRadio1_2 = document.getElementById('1urlRadio2');
+    const uploadImageBox1_2 = document.getElementById('1uploadImageBox2');
+    const imageBox1_2 = document.getElementById('1imageBox2');
+
+    const imageRadio2_1 = document.getElementById('2imageRadio1');
+    const uploadRadio2_1 = document.getElementById('2uploadRadio1');
+    const urlRadio2_1 = document.getElementById('2urlRadio1');
+    const uploadImageBox2_1 = document.getElementById('2uploadImageBox1');
+    const imageBox2_1 = document.getElementById('2imageBox1');
+
+    const imageRadio2_2 = document.getElementById('2imageRadio2');
+    const uploadRadio2_2 = document.getElementById('2uploadRadio2');
+    const urlRadio2_2 = document.getElementById('2urlRadio2');
+    const uploadImageBox2_2 = document.getElementById('2uploadImageBox2');
+    const imageBox2_2 = document.getElementById('2imageBox2');
+
+    const imageRadio3_1 = document.getElementById('3imageRadio1');
+    const uploadRadio3_1 = document.getElementById('3uploadRadio1');
+    const urlRadio3_1 = document.getElementById('3urlRadio1');
+    const uploadImageBox3_1 = document.getElementById('3uploadImageBox1');
+    const imageBox3_1 = document.getElementById('3imageBox1');
+
+    const imageRadio3_2 = document.getElementById('3imageRadio2');
+    const uploadRadio3_2 = document.getElementById('3uploadRadio2');
+    const urlRadio3_2 = document.getElementById('3urlRadio2');
+    const uploadImageBox3_2 = document.getElementById('3uploadImageBox2');
+    const imageBox3_2 = document.getElementById('3imageBox2');
+
+
+    //Show or hide upload options
+    imageRadio1_1.addEventListener('change',function(){
+    	if(uploadRadio1_1.checked){
+    		uploadImageBox1_1.style.visibility='visible';
+    		imageBox1_1.style.visibility='hidden';
+    	}
+    	if(urlRadio1_1.checked){
+    		imageBox1_1.style.visibility='visible';
+    		uploadImageBox1_1.style.visibility='hidden';
+    	}
+    })
+
+    imageRadio1_2.addEventListener('change',function(){
+    	if(uploadRadio1_2.checked){
+    		uploadImageBox1_2.style.visibility='visible';
+    		imageBox1_2.style.visibility='hidden';
+    	}
+    	if(urlRadio1_2.checked){
+    		imageBox1_2.style.visibility='visible';
+    		uploadImageBox1_2.style.visibility='hidden';
+    	}
+    })
+    
+    imageRadio2_1.addEventListener('change',function(){
+    	if(uploadRadio2_1.checked){
+    		uploadImageBox2_1.style.visibility='visible';
+    		imageBox2_1.style.visibility='hidden';
+    	}
+    	if(urlRadio2_1.checked){
+    		imageBox2_1.style.visibility='visible';
+    		uploadImageBox2_1.style.visibility='hidden';
+    	}
+    })
+
+    imageRadio2_2.addEventListener('change',function(){
+    	if(uploadRadio2_2.checked){
+    		uploadImageBox2_2.style.visibility='visible';
+    		imageBox2_2.style.visibility='hidden';
+    	}
+    	if(urlRadio2_2.checked){
+    		imageBox2_2.style.visibility='visible';
+    		uploadImageBox2_2.style.visibility='hidden';
+    	}
+    })
+
+    imageRadio3_1.addEventListener('change',function(){
+    	if(uploadRadio3_1.checked){
+    		uploadImageBox3_1.style.visibility='visible';
+    		imageBox3_1.style.visibility='hidden';
+    	}
+    	if(urlRadio3_1.checked){
+    		imageBox3_1.style.visibility='visible';
+    		uploadImageBox3_1.style.visibility='hidden';
+    	}
+    })
+
+    imageRadio3_2.addEventListener('change',function(){
+    	if(uploadRadio3_2.checked){
+    		uploadImageBox3_2.style.visibility='visible';
+    		imageBox3_2.style.visibility='hidden';
+    	}
+    	if(urlRadio3_2.checked){
+    		imageBox3_2.style.visibility='visible';
+    		uploadImageBox3_2.style.visibility='hidden';
+    	}
+    })
+
     //Event listeners for mothers and fathers
 	let momButton = document.getElementById("momBtn");
 	momButton.addEventListener("click",findMothers,false);
