@@ -7,22 +7,28 @@ body{
 header{
 	height:100px;
 	background-color:#00a0ff;
-	box-shadow: 10px 10px black;
+	box-shadow: 2px 2px 5px #225, 5px 5px 10px #225;
 }
 
 h1{
 	position: relative;
 	width:fit-content;
 	top:20px;
-	margin-left:40%;
-	border:solid;
-	border-color:black;
-	border-radius:25px;
-	font-family:arial;
-	background-color:#254f73;
-	padding:8px 40px 8px 40px;
+	margin: auto;
+	border-radius:15px;
+	font-family: 'Laila', serif;
+	font-size:60px;
 	color:#dfdbee;
 	font-style:italic;
+	letter-spacing: 20px;
+	line-height:50px;
+	border-bottom: solid #aaf 7px;
+	padding: 0 30px 15px 30px;
+	text-shadow: 2px 2px 10px #225;
+}
+
+h3{
+	color:white;
 }
 
 #mainLayout{
@@ -33,7 +39,7 @@ h1{
 
 main{
 	position: relative;
-	top:10px;
+	top:50px;
 }
 
 #controlPanel{
@@ -44,7 +50,11 @@ main{
 
 th{
 	font-size:27px;
+	font-family: 'Lato', sans-serif;
+	transform: translateY(-30px);
 	position: absolute;
+	letter-spacing: 6px;
+	color:#99c;
 }
 
 .personBox{
