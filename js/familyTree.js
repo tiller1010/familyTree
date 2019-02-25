@@ -240,6 +240,47 @@ window.onload=function(){
     	}
     })
 
+    // File reader to read user uploaded images on type: file and event listeners
+	reader1_1 = new FileReader();
+	reader1_2 = new FileReader();
+	reader2_1 = new FileReader();
+	reader2_2 = new FileReader();
+	reader3_1 = new FileReader();
+	reader3_2 = new FileReader();
+
+	uploadImageBox1_1.addEventListener('change',function() {
+		if(this.files[0]){
+	  		reader1_1.readAsDataURL(this.files[0]);
+	  	}
+	})
+	uploadImageBox1_2.addEventListener('change',function() {
+		if(this.files[0]){
+	  		reader1_2.readAsDataURL(this.files[0]);
+	  	}
+	})
+	uploadImageBox2_1.addEventListener('change',function() {
+		if(this.files[0]){
+	  		reader2_1.readAsDataURL(this.files[0]);
+	  	}
+	})
+	uploadImageBox2_2.addEventListener('change',function() {
+		if(this.files[0]){
+	  		reader2_2.readAsDataURL(this.files[0]);
+	  	}
+	})
+	uploadImageBox3_1.addEventListener('change',function() {
+		if(this.files[0]){
+	  		reader3_1.readAsDataURL(this.files[0]);
+	  	}
+	})
+	uploadImageBox3_2.addEventListener('change',function() {
+		if(this.files[0]){
+	  		reader3_2.readAsDataURL(this.files[0]);
+	  	}
+	})
+
+	
+
     //Event listeners for mothers and fathers
 	let momButton = document.getElementById("momBtn");
 	momButton.addEventListener("click",findMothers,false);
@@ -257,7 +298,16 @@ window.onload=function(){
         let name1=document.getElementById(generation+"nameBox1").value;
         let gender1=document.getElementById(generation+"genderBox1").value;
         let parenthood1=document.getElementById(generation+"parentBox1").value;
-        let image1=document.getElementById(generation+"imageBox1").value;
+        let image1='';
+
+        //Read image from URL or uploaded file
+        if(document.getElementById(generation+'uploadRadio1').checked){
+        	image1=eval('reader'+generation+'_1').result;
+        }
+        if(document.getElementById(generation+'urlRadio1').checked){
+        	image1=document.getElementById(generation+"imageBox1").value;
+        }
+
         try{
             if(!document.getElementById(generation+"childOf1")) throw "No parent";
             var childOf1=document.getElementById(generation+"childOf1").value;
@@ -276,7 +326,16 @@ window.onload=function(){
             let name2=document.getElementById(generation+"nameBox2").value;
             let gender2=document.getElementById(generation+"genderBox2").value;
             let parenthood2=document.getElementById(generation+"parentBox2").value;
-            let image2=document.getElementById(generation+"imageBox2").value;
+            let image2='';
+
+	        //Read image from URL or uploaded file for spouse
+	        if(document.getElementById(generation+'uploadRadio2').checked){
+	        	image2=eval('reader'+generation+'_2').result;
+	        }
+	        if(document.getElementById(generation+'urlRadio2').checked){
+	        	image2=document.getElementById(generation+"imageBox2").value;
+       		}
+
             try{
                 if(!document.getElementById(generation+"childOf2")) throw "No parent";
                 var childOf2=document.getElementById(generation+"childOf2").value;
@@ -290,6 +349,14 @@ window.onload=function(){
             });
         }
         
+
+        //Clear file readers
+    	document.getElementById(generation+'uploadImageBox1').value='';
+    	document.getElementById(generation+'uploadImageBox2').value='';
+    	eval('reader'+generation+'_1 = new FileReader()');
+    	eval('reader'+generation+'_2 = new FileReader()');
+
+        //Append the frames to the document
         $("#creation"+generation).before(newFrame);
         if(spouseCheck.checked){
             $("#creation"+generation).before(spouseFrame);
