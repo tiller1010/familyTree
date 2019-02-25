@@ -317,7 +317,7 @@ window.onload=function(){
         }
         let newPerson=new person(name1,gender1,parenthood1,generation,childOf1);
         let childOfDescription1=newPerson.childOf=="No parent"?"":"<br/>Child of "+newPerson.childOf;
-        var newFrame=$("<td class='personBox' style='background-image:url("+image1+");'><div class='description'>This is "+newPerson.name+"<br/>"+newPerson.gender+childOfDescription1+"</div></td>").on('click',function(){
+        var newFrame=$("<td class='personBox' style='background-image:url("+image1+"); background-size: 100px 100px;'><div class='description'>This is "+newPerson.name+"<br/>"+newPerson.gender+childOfDescription1+"</div></td>").on('click',function(){
             $(this).children().slideToggle(300);
         });
 
@@ -344,7 +344,7 @@ window.onload=function(){
                 var childOf2=error;
             }
             let newSpouse=new person(name2,gender2,parenthood2,generation,childOf2);
-            var spouseFrame=$("<td class='personBox' style='background-image:url("+image2+");'><div class='description'>This is "+newSpouse.name+"<br/>"+newSpouse.gender+"</div></td>").on('click',function(){
+            var spouseFrame=$("<td class='personBox' style='background-image:url("+image2+"); background-size: 100px 100px;'><div class='description'>This is "+newSpouse.name+"<br/>"+newSpouse.gender+"</div></td>").on('click',function(){
                 $(this).children().slideToggle(300);
             });
         }
