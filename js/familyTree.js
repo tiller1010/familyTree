@@ -89,10 +89,20 @@ window.onload=function(){
         }
     }
 
-    //Adds description animation
+    //Adds description animation and hide headers if any descriptions exist
     function slideAndHide(){
         $(this).children().slideToggle(300);
-        $(".tableHeader").toggle();
+        let descriptions=$('.description');
+        setTimeout(function(){
+            for(i=0; i<descriptions.length; i++){
+                if(descriptions[i].style.display==='block'){
+                    $('.tableHeader').css('visibility', 'hidden');
+                    return;
+                }
+            }
+            //Show headers if all descriptions are closed
+            $('.tableHeader').css('visibility', 'visible');
+        },400);
     }
 
     //Adds ability to toggle creation table
