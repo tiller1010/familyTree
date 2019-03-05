@@ -105,7 +105,7 @@ window.onload=function(){
         ctx.stroke();
     }
 
-    //Adds description animation and hide headers if any descriptions exist
+    //Adds description animation, hide headers if any descriptions exist, and draw lines
     function slideAndHide(){
         $(this).children().slideToggle(300);
         let descriptions=$('.description');
@@ -119,6 +119,10 @@ window.onload=function(){
             //Show headers if all descriptions are closed
             $('.tableHeader').css('visibility', 'visible');
         },400);
+
+        //Draw lines to parent
+        let offset=$(this).offset();
+        drawLines(offset.left+55, offset.top, offset.left+55, offset.top-190);
     }
 
     //Adds ability to toggle creation table
