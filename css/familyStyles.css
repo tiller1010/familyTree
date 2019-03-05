@@ -31,6 +31,10 @@ h3{
 	color:white;
 }
 
+#canvas{
+	position: absolute;
+}
+
 #mainLayout{
 	width:80%;
 	position: relative;

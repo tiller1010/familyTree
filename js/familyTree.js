@@ -89,6 +89,22 @@ window.onload=function(){
         }
     }
 
+
+    //canvas context and functions defined
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    function clearCanvas(){
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    function drawLines(startX, startY, endX, endY){
+        ctx.beginPath();
+        ctx.moveTo(startX, startY);
+        ctx.lineTo(endX, endY);
+        ctx.stroke();
+    }
+
     //Adds description animation and hide headers if any descriptions exist
     function slideAndHide(){
         $(this).children().slideToggle(300);
@@ -389,28 +405,5 @@ window.onload=function(){
     gen3CreateButton.addEventListener("click",function(){
         personCreator("3");
     });
-
-
-
-
-
-
- //    for(i=0;i<familyCount.length;i++){
-	//     let canvas = document.getElementById('lines'+i);
-	// 	let ctx = canvas.getContext('2d');
-	// 	ctx.beginPath();
-	// 	ctx.moveTo(90,0);
-	// 	ctx.lineTo(90,70);
-	// 	if(familyCount[i].relation==='Mother'){
-	// 		ctx.lineTo(250,70);
-	// 		ctx.stroke();
-	// 		console.log(familyCount[i]);
-	// 	}
-	// 	if(familyCount[i].relation==='Father'){
-	// 		ctx.lineTo(0,70);
-	// 		ctx.stroke();
-	// 		console.log(familyCount[i]);
-	// 	}
-	// }
 }
 
