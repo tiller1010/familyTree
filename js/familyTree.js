@@ -90,11 +90,10 @@ window.onload=function(){
     }
 
     //Adds description animation
-    $(function(){
-        $(".personBox").click(function(){
-            $(this).children().slideToggle(300);
-        });
-    });
+    function slideAndHide(){
+        $(this).children().slideToggle(300);
+        $(".tableHeader").toggle();
+    }
 
     //Adds ability to toggle creation table
     $(function(){
@@ -102,6 +101,7 @@ window.onload=function(){
             $(this).next().toggle();
         });
     });
+
 
     //Checks for spouse checkmark
     const spouseCheck1=document.getElementById('spouseCheck1');
@@ -317,9 +317,7 @@ window.onload=function(){
         }
         let newPerson=new person(name1,gender1,parenthood1,generation,childOf1);
         let childOfDescription1=newPerson.childOf=="No parent"?"":"<br/>Child of "+newPerson.childOf;
-        var newFrame=$("<td class='personBox' style='background-image:url("+image1+"); background-size: 100px 100px;'><div class='description'>This is "+newPerson.name+"<br/>"+newPerson.gender+childOfDescription1+"</div></td>").on('click',function(){
-            $(this).children().slideToggle(300);
-        });
+        var newFrame=$("<td class='personBox' style='background-image:url("+image1+"); background-size: 100px 100px;'><div class='description'>This is "+newPerson.name+"<br/>"+newPerson.gender+childOfDescription1+"</div></td>").on('click',slideAndHide);
 
         let spouseCheck=document.getElementById("spouseCheck"+generation);
         if(spouseCheck.checked){ 
@@ -344,9 +342,8 @@ window.onload=function(){
                 var childOf2=error;
             }
             let newSpouse=new person(name2,gender2,parenthood2,generation,childOf2);
-            var spouseFrame=$("<td class='personBox' style='background-image:url("+image2+"); background-size: 100px 100px;'><div class='description'>This is "+newSpouse.name+"<br/>"+newSpouse.gender+"</div></td>").on('click',function(){
-                $(this).children().slideToggle(300);
-            });
+            let childOfDescription2=newSpouse.childOf=="No parent"?"":"<br/>Child of "+newSpouse.childOf;
+            var spouseFrame=$("<td class='personBox' style='background-image:url("+image2+"); background-size: 100px 100px;'><div class='description'>This is "+newSpouse.name+"<br/>"+newSpouse.gender+childOfDescription2+"</div></td>").on('click',slideAndHide);
         }
         
 
@@ -382,6 +379,11 @@ window.onload=function(){
     gen3CreateButton.addEventListener("click",function(){
         personCreator("3");
     });
+
+
+
+
+
 
  //    for(i=0;i<familyCount.length;i++){
 	//     let canvas = document.getElementById('lines'+i);
