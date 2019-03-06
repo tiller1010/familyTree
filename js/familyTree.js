@@ -108,6 +108,7 @@ window.onload=function(){
     //Adds description animation, hide headers if any descriptions exist, and draw lines
     function slideAndHide(person){
         let personID=$('#'+person.name);
+        let targetID=$('#'+person.childOf);
         personID.children().slideToggle(300);
         let descriptions=$('.description');
         setTimeout(function(){
@@ -121,11 +122,14 @@ window.onload=function(){
             $('.tableHeader').css('visibility', 'visible');
         },400);
 
-        //Draw lines to parent
-        let offset=personID.offset();
+        //Draw lines to parent  
         setTimeout(function(){
             if($('#'+personID[0].id + ' > .description').css('display')==='block'){
-                drawLines(offset.left+55, offset.top-100, offset.left+55, offset.top-190);
+                if(person.childOf!=='No parent'){ 
+                    let offset=personID.offset();
+                    let targetOffset=targetID.offset();
+                    drawLines(offset.left+55, offset.top-100, targetOffset.left+55, targetOffset.top+20);
+                }
             }
             else{
                 clearCanvas();
