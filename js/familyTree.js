@@ -93,6 +93,7 @@ window.onload=function(){
     //canvas context and functions defined
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
+    ctx.canvas.width  = window.innerWidth-100;
 
     function clearCanvas(){
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -343,24 +344,27 @@ window.onload=function(){
         let parenthood1=document.getElementById(generation+"parentBox1").value;
         let image1='';
 
-        //Read image from URL or uploaded file
-        if(document.getElementById(generation+'uploadRadio1').checked){
-        	image1=eval('reader'+generation+'_1').result;
-        }
-        if(document.getElementById(generation+'urlRadio1').checked){
-        	image1=document.getElementById(generation+"imageBox1").value;
-        }
+        //Only display person if named
+        if(name1){
+            //Read image from URL or uploaded file
+            if(document.getElementById(generation+'uploadRadio1').checked){
+            	image1=eval('reader'+generation+'_1').result;
+            }
+            if(document.getElementById(generation+'urlRadio1').checked){
+            	image1=document.getElementById(generation+"imageBox1").value;
+            }
 
-        try{
-            if(!document.getElementById(generation+"childOf1")) throw "No parent";
-            var childOf1=document.getElementById(generation+"childOf1").value;
+            try{
+                if(!document.getElementById(generation+"childOf1")) throw "No parent";
+                var childOf1=document.getElementById(generation+"childOf1").value;
+            }
+            catch(error){
+                var childOf1=error;
+            }
+            let newPerson=new person(name1,gender1,parenthood1,generation,childOf1);
+            let childOfDescription1=newPerson.childOf=="No parent"?"":"<br/>Child of "+newPerson.childOf;
+            var newFrame=$("<td id='"+newPerson.name+"' class='personBox' style='background-image:url("+image1+"); background-size: 100px 100px;'><div class='description'>This is "+newPerson.name+"<br/>"+newPerson.gender+childOfDescription1+"</div></td>").on('click',function(){slideAndHide(newPerson)});
         }
-        catch(error){
-            var childOf1=error;
-        }
-        let newPerson=new person(name1,gender1,parenthood1,generation,childOf1);
-        let childOfDescription1=newPerson.childOf=="No parent"?"":"<br/>Child of "+newPerson.childOf;
-        var newFrame=$("<td id='"+newPerson.name+"' class='personBox' style='background-image:url("+image1+"); background-size: 100px 100px;'><div class='description'>This is "+newPerson.name+"<br/>"+newPerson.gender+childOfDescription1+"</div></td>").on('click',function(){slideAndHide(newPerson)});
 
         let spouseCheck=document.getElementById("spouseCheck"+generation);
         if(spouseCheck.checked){ 
@@ -369,24 +373,26 @@ window.onload=function(){
             let parenthood2=document.getElementById(generation+"parentBox2").value;
             let image2='';
 
-	        //Read image from URL or uploaded file for spouse
-	        if(document.getElementById(generation+'uploadRadio2').checked){
-	        	image2=eval('reader'+generation+'_2').result;
-	        }
-	        if(document.getElementById(generation+'urlRadio2').checked){
-	        	image2=document.getElementById(generation+"imageBox2").value;
-       		}
+            if(name2){
+    	        //Read image from URL or uploaded file for spouse
+    	        if(document.getElementById(generation+'uploadRadio2').checked){
+    	        	image2=eval('reader'+generation+'_2').result;
+    	        }
+    	        if(document.getElementById(generation+'urlRadio2').checked){
+    	        	image2=document.getElementById(generation+"imageBox2").value;
+           		}
 
-            try{
-                if(!document.getElementById(generation+"childOf2")) throw "No parent";
-                var childOf2=document.getElementById(generation+"childOf2").value;
+                try{
+                    if(!document.getElementById(generation+"childOf2")) throw "No parent";
+                    var childOf2=document.getElementById(generation+"childOf2").value;
+                }
+                catch(error){
+                    var childOf2=error;
+                }
+                let newSpouse=new person(name2,gender2,parenthood2,generation,childOf2);
+                let childOfDescription2=newSpouse.childOf=="No parent"?"":"<br/>Child of "+newSpouse.childOf;
+                var spouseFrame=$("<td id='"+newSpouse.name+"' class='personBox' style='background-image:url("+image2+"); background-size: 100px 100px;'><div class='description'>This is "+newSpouse.name+"<br/>"+newSpouse.gender+childOfDescription2+"</div></td>").on('click',function(){slideAndHide(newSpouse)});
             }
-            catch(error){
-                var childOf2=error;
-            }
-            let newSpouse=new person(name2,gender2,parenthood2,generation,childOf2);
-            let childOfDescription2=newSpouse.childOf=="No parent"?"":"<br/>Child of "+newSpouse.childOf;
-            var spouseFrame=$("<td id='"+newSpouse.name+"' class='personBox' style='background-image:url("+image2+"); background-size: 100px 100px;'><div class='description'>This is "+newSpouse.name+"<br/>"+newSpouse.gender+childOfDescription2+"</div></td>").on('click',function(){slideAndHide(newSpouse)});
         }
         
 
